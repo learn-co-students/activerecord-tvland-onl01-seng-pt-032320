@@ -8,8 +8,7 @@ class Actor < ActiveRecord::Base
 
     def list_roles
         self.characters.collect do |char|
-            show = self.shows.select{|sho| sho.id == char.show_id}[0]
-            "#{char.name} - #{show.name}"
+        "#{char.name} - #{char.show.name}"
         end
     end
 end
