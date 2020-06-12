@@ -1,5 +1,5 @@
 class Actor < ActiveRecord::Base
-  has_many :chracters
+  has_many :characters
   has_many :shows, through: :chracters
 
   def full_name
@@ -7,6 +7,8 @@ class Actor < ActiveRecord::Base
   end
   
   def list_roles
-    binding.pry
+    self.characters.map do |c|
+      "#{c.name} - #{c.show.name}"
+    end
   end
 end
