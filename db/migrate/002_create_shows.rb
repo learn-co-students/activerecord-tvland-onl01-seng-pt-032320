@@ -8,4 +8,5 @@ class CreateShows < ActiveRecord::Migration[5.1]
       t.string :name
     end
   end
+  
 end
